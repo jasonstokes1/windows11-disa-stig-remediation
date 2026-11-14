@@ -117,7 +117,7 @@ Evidence for each step is in [screenshots/](screenshots/). Three examples:
 
 Audit policy before the fix (step 2):
 
-<img src="screenshots/18-auditpol-before.png" alt="Audit policy subcategories before the fix" width="700">
+<img src="screenshots/18-auditpol-before.png" alt="Audit policy subcategories before the fix" width="500">
 
 Account and lockout policy after the fix (step 4):
 
