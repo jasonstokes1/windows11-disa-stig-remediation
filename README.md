@@ -48,6 +48,8 @@ The last **13 failures** could not be fixed honestly on this machine. Examples: 
 
 ## 1. Setup
 
+*About the images: most images in this README are close-ups, so the text is readable without zooming. PowerShell close-ups show the result lines. Tenable summaries are assembled from parts of the full page (scan name, result counts, start time). Click any close-up to open the complete, unedited screenshot.*
+
 | Item | Value |
 |---|---|
 | Machine | Azure virtual machine, Windows 11 Pro 25H2, Trusted launch (Secure Boot and virtual TPM) |
@@ -58,7 +60,7 @@ The last **13 failures** could not be fixed honestly on this machine. Examples: 
 
 Two settings were required by the lab and are part of the baseline: Windows Firewall off (the range requires it for scanning) and `LocalAccountTokenFilterPolicy = 1` (needed so the scanner can log in remotely with a local account). The firewall setting is one of the 13 documented exceptions.
 
-<img src="screenshots/01-vm-overview.png" alt="Azure overview of the virtual machine" width="900">
+<a href="screenshots/01-vm-overview.png"><img src="screenshots/01-vm-overview-crop.png" alt="Azure overview of the virtual machine: no public IP, private IP, size, Windows 11 Pro 25H2 image" width="524"></a>
 
 **The first scan returned nothing, and I checked why.** The range provides a ready-made STIG scan template. It logged in successfully and reported vulnerabilities, but **0 audit results**. I confirmed the zero was real by running the same search on a host that did have audit data, then built my own scan from Tenable's Advanced Network Scan template with the STIG audit attached. That scan became the baseline. The empty report is kept in [reports/range-template-scan-no-audits.pdf](reports/range-template-scan-no-audits.pdf).
 
@@ -66,7 +68,7 @@ Two settings were required by the lab and are part of the baseline: Windows Fire
 
 Tenable checked 257 STIG rules. **149 failed, 11 needed manual review, 97 passed.**
 
-<img src="screenshots/04-stig-baseline-audits.png" alt="Tenable audit results for the baseline scan: 149 failed, 11 warning, 98 passed" width="900">
+<a href="screenshots/04-stig-baseline-audits.png"><img src="screenshots/04-stig-baseline-audits-summary.png" alt="Tenable audit results for the baseline scan: 149 failed, 11 warning, 98 passed" width="612"></a>
 
 | Severity | Rules | Failed at baseline |
 |---|---|---|
@@ -111,7 +113,7 @@ Before each re-audit I predicted the result. From Scan 4 onward every prediction
 
 Every script has a matching `rollback-*.ps1` in [scripts/](scripts/).
 
-Evidence for each step is in [screenshots/](screenshots/). Three examples follow. PowerShell images in this README are close-ups of the result lines; click one to open the full window with the command that produced it.
+Evidence for each step is in [screenshots/](screenshots/). Three examples:
 
 Audit policy before the fix (step 2):
 
@@ -131,7 +133,7 @@ The required legal notice shown at logon (step 5):
 
 I set the Delivery Optimization policy value the rule names, as one of 16 rules in step 8. I predicted 47 failures for the next audit. It showed **48**: this rule still failed and reported the value as missing. Read-only checks showed the policy value was present, so I read the audit's exact check. The STIG lists a **second location** for computers that are not managed by a domain, and that is the one Tenable read on this machine. Setting the value there passed the rule on the next scan.
 
-<img src="screenshots/44-stig-scan9-audits.png" alt="Scan 9 audit results: 48 failed, 11 warning, 199 passed" width="900">
+<a href="screenshots/44-stig-scan9-audits.png"><img src="screenshots/44-stig-scan9-audits-summary.png" alt="Scan 9 audit results: 48 failed, 11 warning, 199 passed" width="612"></a>
 
 ### A security feature that was enabled but not running (WN11-CC-000070, WN11-CC-000080)
 
@@ -182,11 +184,17 @@ The rule also requires a firmware lock that cannot be undone from Windows. Apply
 
 The full final result, one row per rule, is in [results/stig-results-final-scan16.csv](results/stig-results-final-scan16.csv).
 
-**Before (Scan 1) and after (Scan 16):**
+**Before (Scan 1, November 9):**
 
-<img src="screenshots/04-stig-baseline-audits.png" alt="Before: baseline audit" width="900">
+<a href="screenshots/04-stig-baseline-audits.png"><img src="screenshots/04-stig-baseline-audits-summary.png" alt="Before: baseline audit, 149 failed, 11 warning, 98 passed" width="612"></a>
 
-<img src="screenshots/91-stig-scan16-final-audits.png" alt="After: final audit" width="900">
+**After (Scan 16, November 14):**
+
+<a href="screenshots/91-stig-scan16-final-audits.png"><img src="screenshots/91-stig-scan16-final-audits-summary.png" alt="After: final audit, 13 failed, 11 warning, 234 passed" width="612"></a>
+
+The 13 failures and 11 manual-review items that remain, by name:
+
+<a href="screenshots/91-stig-scan16-final-audits.png"><img src="screenshots/91-stig-scan16-final-audits-rules.png" alt="Final audit: the 13 failed rules and 11 warning rules" width="810"></a>
 
 **Vulnerabilities, with honest attribution.** The same scans also report software vulnerabilities. They fell from 3 Critical, 13 High, 13 Medium and 2 Low to 0 Critical, 1 High, 4 Medium and 1 Low. That drop came from **Windows Update installing patches during the project, not from my scripts**. STIG settings and missing patches are separate problems. The six findings that remain are outside this project's scope; they are the same ones I remediated or risk-accepted in my [RDP hardening project](https://github.com/jasonstokes1/rdp-vulnerability-remediation). Reports: [baseline](reports/scan01-baseline-vulns.pdf), [final](reports/scan15-final-vulns.pdf).
 
@@ -229,7 +237,7 @@ The full final result, one row per rule, is in [results/stig-results-final-scan1
 | `scripts/` | 26 fix scripts, 20 rollback scripts, 1 `secedit` security template |
 | `docs/` | [exceptions.md](docs/exceptions.md): the 13 remaining failures and 11 manual-review items |
 | `results/` | Final audit result for all 257 rules (CSV) |
-| `screenshots/` | 84 evidence screenshots (redacted), numbered in the order of the work, plus 6 close-ups (`-crop`) used in this README |
+| `screenshots/` | 84 evidence screenshots (redacted), numbered in the order of the work, plus 11 close-ups (`-crop`, `-summary`, `-rules`) used in this README |
 | `reports/` | Tenable vulnerability reports (baseline, final) and the empty range-template report |
 
 <sub>Cyber-range exercise during my Cybersecurity Analyst internship at LOG(N) Pacific. Lab virtual machine in a shared training environment; not a production or Department of Defense system. Screenshots redacted.</sub>
