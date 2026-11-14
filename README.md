@@ -111,7 +111,7 @@ Before each re-audit I predicted the result. From Scan 4 onward every prediction
 
 Every script has a matching `rollback-*.ps1` in [scripts/](scripts/).
 
-Evidence for each step is in [screenshots/](screenshots/). Three examples:
+Evidence for each step is in [screenshots/](screenshots/). Three examples follow. PowerShell images in this README are close-ups of the result lines; click one to open the full window with the command that produced it.
 
 Audit policy before the fix (step 2):
 
@@ -119,7 +119,7 @@ Audit policy before the fix (step 2):
 
 Account and lockout policy after the fix (step 4):
 
-<img src="screenshots/27-secpol-after-batch4.png" alt="Security policy export after the account policy and user rights fix" width="700">
+<a href="screenshots/27-secpol-after-batch4.png"><img src="screenshots/27-secpol-after-batch4-crop.png" alt="Security policy export after the account policy and user rights fix" width="796"></a>
 
 The required legal notice shown at logon (step 5):
 
@@ -137,23 +137,25 @@ I set the Delivery Optimization policy value the rule names, as one of 16 rules 
 
 Virtualization-based security (VBS) uses the hypervisor to isolate part of Windows memory. I set the three policy values the audit checks and restarted. Windows reported VBS as **enabled but not running**.
 
-<img src="screenshots/64-deviceguard-after-reboot.png" alt="Device Guard status after the first fix: enabled, not running" width="700">
+<a href="screenshots/64-deviceguard-after-reboot.png"><img src="screenshots/64-deviceguard-after-reboot-crop.png" alt="Device Guard status after the first fix: enabled, not running" width="838"></a>
 
 My first explanation, taken from documentation, was that this type of Azure VM blocks the feature. The data disagreed: the processor reported every required virtualization capability. The answer was in the boot log. At every start, including the one after my fix, Windows logged that VBS was disabled with **no policies found**.
 
-<img src="screenshots/68-kernel-boot-vbs-event.png" alt="Kernel-Boot event 153: virtualization-based security is disabled, policies 0" width="700">
+<a href="screenshots/68-kernel-boot-vbs-event.png"><img src="screenshots/68-kernel-boot-vbs-event-crop.png" alt="Kernel-Boot event 153: virtualization-based security is disabled, policies 0" width="598"></a>
 
 The boot loader starts before most of Windows and reads this configuration from a different part of the registry (the SYSTEM hive) than the policy path the audit checks. Group Policy normally writes both. I had written the registry directly, so only one existed. I added the values Microsoft documents for the registry method, restarted, and VBS and memory integrity were both running.
 
-<img src="screenshots/71-deviceguard-after-system-fix.png" alt="Device Guard status after the second fix: VBS and HVCI running" width="700">
+<a href="screenshots/71-deviceguard-after-system-fix.png"><img src="screenshots/71-deviceguard-after-system-fix-crop.png" alt="Device Guard status after the second fix: VBS and HVCI running" width="838"></a>
 
 ### A rule I tested, proved unfixable here, and rolled back (WN11-CC-000075, CAT I)
 
 Credential Guard isolates stored logon secrets inside VBS. I enabled it in a reversible way to test it. One event log said Credential Guard had started. The interface Tenable reads said it was **not running**. Two sources disagreed, so I checked a third: the operating system edition. The image is **Windows 11 Pro**, and Microsoft licenses Credential Guard only for Windows Enterprise and Education.
 
-<img src="screenshots/75-credguard-edition-events.png" alt="Credential Guard start events" width="700">
+<a href="screenshots/75-credguard-edition-events.png"><img src="screenshots/75-credguard-edition-events-crop.png" alt="Credential Guard start events" width="671"></a>
 
-<img src="screenshots/76-credguard-recheck.png" alt="Windows 11 Pro edition and security services running" width="700">
+<a href="screenshots/76-credguard-recheck.png"><img src="screenshots/76-credguard-recheck-crop.png" alt="Windows 11 Pro edition and security services running" width="228"></a>
+
+The `2` is the list of security services running: 2 means memory integrity only. Credential Guard would appear as 1.
 
 The rule also requires a firmware lock that cannot be undone from Windows. Applying an irreversible setting that would still fail the audit made no sense, so I rolled the test back and documented the exception with its compensating controls.
 
@@ -227,7 +229,7 @@ The full final result, one row per rule, is in [results/stig-results-final-scan1
 | `scripts/` | 26 fix scripts, 20 rollback scripts, 1 `secedit` security template |
 | `docs/` | [exceptions.md](docs/exceptions.md): the 13 remaining failures and 11 manual-review items |
 | `results/` | Final audit result for all 257 rules (CSV) |
-| `screenshots/` | 84 evidence screenshots (redacted), numbered in the order of the work |
+| `screenshots/` | 84 evidence screenshots (redacted), numbered in the order of the work, plus 6 close-ups (`-crop`) used in this README |
 | `reports/` | Tenable vulnerability reports (baseline, final) and the empty range-template report |
 
 <sub>Cyber-range exercise during my Cybersecurity Analyst internship at LOG(N) Pacific. Lab virtual machine in a shared training environment; not a production or Department of Defense system. Screenshots redacted.</sub>
