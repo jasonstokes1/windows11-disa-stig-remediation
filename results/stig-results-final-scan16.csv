@@ -1,0 +1,258 @@
+STIG ID,CAT,Status,Rule
+WN11-00-000005,II,PASSED,Domain-joined systems must use Windows 11 Enterprise Edition 64-bit version.
+WN11-00-000010,II,PASSED,Windows 11 systems must have a Trusted Platform Module (TPM) enabled.
+WN11-00-000015,II,PASSED,"Windows 11 systems must have Unified Extensible Firmware Interface (UEFI) firmware and be configured to run in UEFI mode, not Legacy BIOS."
+WN11-00-000020,II,PASSED,Secure Boot must be enabled on Windows 11 systems.
+WN11-00-000030,I,WARNING,Windows 11 information systems must use BitLocker to encrypt all disks to protect the confidentiality and integrity of all information at rest.
+WN11-00-000031,I,FAILED,Windows 11 systems must use a BitLocker PIN for pre-boot authentication.
+WN11-00-000032,II,FAILED,Windows 11 systems must use a BitLocker PIN with a minimum length of six digits for pre-boot authentication.
+WN11-00-000035,II,WARNING,"The operating system must employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs."
+WN11-00-000040,I,PASSED,Windows 11 systems must be maintained at a supported servicing level.
+WN11-00-000045,I,PASSED,The Windows 11 system must use an antivirus program.
+WN11-00-000050,I,PASSED,Local volumes must be formatted using NTFS.
+WN11-00-000055,II,WARNING,Alternate operating systems must not be permitted on the same system.
+WN11-00-000060,II,WARNING,Non-system-created file shares on a system must limit access to groups that require it.
+WN11-00-000065,III,ERROR,Unused accounts must be disabled or removed from the system after 35 days of inactivity.
+WN11-00-000070,I,WARNING,Only accounts responsible for the administration of a system must have Administrator rights on the system.
+WN11-00-000075,II,PASSED,Only accounts responsible for the backup operations must be members of the Backup Operators group.
+WN11-00-000080,II,PASSED,Only authorized user accounts must be allowed to create or run virtual machines on Windows 11 systems.
+WN11-00-000085,III,PASSED,Standard local user accounts must not exist on a system in a domain.
+WN11-00-000090,II,PASSED,Accounts must be configured to require password expiration.
+WN11-00-000095,II,PASSED,Permissions for system files and directories must conform to minimum requirements.
+WN11-00-000100,I,PASSED,Internet Information System (IIS) or its subcomponents must not be installed on a workstation.
+WN11-00-000105,II,PASSED,Simple Network Management Protocol (SNMP) must not be installed on the system.
+WN11-00-000110,II,PASSED,Simple TCP/IP Services must not be installed on the system.
+WN11-00-000115,II,PASSED,The Telnet Client must not be installed on the system.
+WN11-00-000120,II,PASSED,The TFTP Client must not be installed on the system.
+WN11-00-000125,II,PASSED,Copilot must be disabled for Windows 11.
+WN11-00-000126,II,PASSED,Windows 11 systems must block consumer account user authentication.
+WN11-00-000130,II,WARNING,Software certificate installation files must be removed from Windows 11.
+WN11-00-000135,II,FAILED,A host-based firewall must be installed and enabled on the system.
+WN11-00-000140,II,WARNING,Inbound exceptions to the firewall on Windows 11 domain workstations must only allow authorized remote management hosts.
+WN11-00-000150,I,PASSED,Structured Exception Handling Overwrite Protection (SEHOP) must be enabled.
+WN11-00-000155,II,PASSED,The Windows PowerShell 2.0 feature must be disabled on the system.
+WN11-00-000160,II,PASSED,The Server Message Block (SMB) v1 protocol must be disabled on the system.
+WN11-00-000165,II,PASSED,The Server Message Block (SMB) v1 protocol must be disabled on the SMB server.
+WN11-00-000170,II,PASSED,The Server Message Block (SMB) v1 protocol must be disabled on the SMB client.
+WN11-00-000175,II,PASSED,The Secondary Logon service must be disabled on Windows 11.
+WN11-00-000190,II,WARNING,Orphaned security identifiers (SIDs) must be removed from user rights on Windows 11.
+WN11-00-000210,II,FAILED,Bluetooth must be turned off unless approved by the organization.
+WN11-00-000230,II,WARNING,The system must notify the user when a Bluetooth device attempts to connect.
+WN11-00-000240,I,WARNING,"Administrative accounts must not be used with applications that access the internet, such as web browsers, or with potential internet sources, such as email."
+WN11-00-000260,III,FAILED,The Windows 11 time service must synchronize with an appropriate DoW time source.
+WN11-00-000395,II,PASSED,Windows 11 must not have portproxy enabled or in use.
+WN11-00-000400,II,PASSED,All Wi-Fi Direct adapters must be disabled on the system.
+WN11-AC-000005,II,PASSED,Windows 11 account lockout duration must be configured to 15 minutes or greater.
+WN11-AC-000010,II,PASSED,The number of allowed bad logon attempts must be configured to three or less.
+WN11-AC-000015,II,PASSED,The period of time before the bad logon counter is reset must be configured to 15 minutes.
+WN11-AC-000020,II,PASSED,The password history must be configured to 24 passwords remembered.
+WN11-AC-000025,II,PASSED,The maximum password age must be configured to 180 days or less.
+WN11-AC-000030,II,PASSED,The minimum password age must be configured to at least 1 day.
+WN11-AC-000035,II,PASSED,"Passwords must, at a minimum, be 14 characters."
+WN11-AC-000040,II,PASSED,The built-in Microsoft password complexity filter must be enabled.
+WN11-AC-000045,I,PASSED,Reversible password encryption must be disabled.
+WN11-AU-000005,II,PASSED,The system must be configured to audit Account Logon - Credential Validation failures.
+WN11-AU-000010,II,PASSED,The system must be configured to audit Account Logon - Credential Validation successes.
+WN11-AU-000030,II,PASSED,The system must be configured to audit Account Management - Security Group Management successes.
+WN11-AU-000035,II,PASSED,The system must be configured to audit Account Management - User Account Management failures.
+WN11-AU-000040,II,PASSED,The system must be configured to audit Account Management - User Account Management successes.
+WN11-AU-000045,II,PASSED,The system must be configured to audit Detailed Tracking - PNP Activity successes.
+WN11-AU-000050,II,PASSED,The system must be configured to audit Detailed Tracking - Process Creation successes.
+WN11-AU-000054,II,PASSED,The system must be configured to audit Logon/Logoff - Account Lockout failures.
+WN11-AU-000060,II,PASSED,The system must be configured to audit Logon/Logoff - Group Membership successes.
+WN11-AU-000065,II,PASSED,The system must be configured to audit Logon/Logoff - Logoff successes.
+WN11-AU-000070,II,PASSED,The system must be configured to audit Logon/Logoff - Logon failures.
+WN11-AU-000075,II,PASSED,The system must be configured to audit Logon/Logoff - Logon successes.
+WN11-AU-000080,II,PASSED,The system must be configured to audit Logon/Logoff - Special Logon successes.
+WN11-AU-000081,II,PASSED,Windows 11 must be configured to audit Object Access - File Share failures.
+WN11-AU-000082,II,PASSED,Windows 11 must be configured to audit Object Access - File Share successes.
+WN11-AU-000083,II,PASSED,Windows 11 must be configured to audit Object Access - Other Object Access Events successes.
+WN11-AU-000084,II,PASSED,Windows 11 must be configured to audit Object Access - Other Object Access Events failures.
+WN11-AU-000085,II,PASSED,The system must be configured to audit Object Access - Removable Storage failures.
+WN11-AU-000090,II,PASSED,The system must be configured to audit Object Access - Removable Storage successes.
+WN11-AU-000100,II,PASSED,The system must be configured to audit Policy Change - Audit Policy Change successes.
+WN11-AU-000105,II,PASSED,The system must be configured to audit Policy Change - Authentication Policy Change successes.
+WN11-AU-000107,II,PASSED,The system must be configured to audit Policy Change - Authorization Policy Change successes.
+WN11-AU-000110,II,PASSED,The system must be configured to audit Privilege Use - Sensitive Privilege Use failures.
+WN11-AU-000115,II,PASSED,The system must be configured to audit Privilege Use - Sensitive Privilege Use successes.
+WN11-AU-000120,II,PASSED,The system must be configured to audit System - IPsec Driver failures.
+WN11-AU-000130,II,PASSED,The system must be configured to audit System - Other System Events successes.
+WN11-AU-000135,II,PASSED,The system must be configured to audit System - Other System Events failures.
+WN11-AU-000140,II,PASSED,The system must be configured to audit System - Security State Change successes.
+WN11-AU-000150,II,PASSED,The system must be configured to audit System - Security System Extension successes.
+WN11-AU-000155,II,PASSED,The system must be configured to audit System - System Integrity failures.
+WN11-AU-000160,II,PASSED,The system must be configured to audit System - System Integrity successes.
+WN11-AU-000500,II,PASSED,The Application event log size must be configured to 32768 KB or greater.
+WN11-AU-000505,II,PASSED,The security event log size must be configured to a value that holds at least one week's worth of audit records.
+WN11-AU-000510,II,PASSED,The System event log size must be configured to 32768 KB or greater.
+WN11-AU-000515,II,PASSED,Windows 11 permissions for the Application event log must prevent access by non-privileged accounts.
+WN11-AU-000520,II,PASSED,Windows 11 permissions for the Security event log must prevent access by non-privileged accounts.
+WN11-AU-000525,II,PASSED,Windows 11 permissions for the System event log must prevent access by non-privileged accounts.
+WN11-AU-000555,II,PASSED,Windows 11 must be configured to audit Other Policy Change Events Failures.
+WN11-AU-000560,II,PASSED,Windows 11 must be configured to audit other Logon/Logoff Events Successes.
+WN11-AU-000565,II,PASSED,Windows 11 must be configured to audit other Logon/Logoff Events Failures.
+WN11-AU-000570,II,PASSED,Windows 11 must be configured to audit Detailed File Share Failures.
+WN11-AU-000575,II,PASSED,Windows 11 must be configured to audit MPSSVC Rule-Level Policy Change Successes.
+WN11-AU-000580,II,PASSED,Windows 11 must be configured to audit MPSSVC Rule-Level Policy Change Failures.
+WN11-AU-000583,II,PASSED,Windows 11 must be configured to audit handle manipulation failures.
+WN11-AU-000585,II,PASSED,Windows 11 must have command line process auditing events enabled for failures.
+WN11-AU-000586,II,PASSED,Windows 11 must be configured to audit registry successes.
+WN11-AU-000587,II,PASSED,Windows 11 must be configured to audit sensitive privilege use successes.
+WN11-AU-000588,II,PASSED,Windows 11 must be configured to audit sensitive privilege use failures.
+WN11-AU-000589,II,PASSED,Windows 11 must be configured to audit registry failures.
+WN11-CC-000005,II,PASSED,Camera access from the lock screen must be disabled.
+WN11-CC-000007,II,PASSED,Windows 11 must cover or disable the built-in or attached camera when not in use.
+WN11-CC-000010,II,PASSED,The display of slide shows on the lock screen must be disabled.
+WN11-CC-000020,II,PASSED,IPv6 source routing must be configured to highest protection.
+WN11-CC-000025,II,PASSED,The system must be configured to prevent IP source routing.
+WN11-CC-000030,III,PASSED,The system must be configured to prevent Internet Control Message Protocol (ICMP) redirects from overriding Open Shortest Path First (OSPF) generated routes.
+WN11-CC-000035,III,PASSED,The system must be configured to ignore NetBIOS name release requests except from WINS servers.
+WN11-CC-000037,II,PASSED,Local administrator accounts must have their privileged token filtered to prevent elevated privileges from being used over the network on domain systems.
+WN11-CC-000038,II,PASSED,WDigest Authentication must be disabled.
+WN11-CC-000039,II,PASSED,Run as different user must be removed from context menus.
+WN11-CC-000040,II,PASSED,Insecure logons to an SMB server must be disabled.
+WN11-CC-000044,II,PASSED,Internet connection sharing must be disabled.
+WN11-CC-000050,II,PASSED,Hardened UNC Paths must be defined to require mutual authentication and integrity for at least the \\*\SYSVOL and \\*\NETLOGON shares.
+WN11-CC-000052,II,PASSED,Windows 11 must be configured to prioritize ECC Curves with longer key lengths first.
+WN11-CC-000055,II,PASSED,Simultaneous connections to the internet or a Windows domain must be limited.
+WN11-CC-000060,II,PASSED,Connections to non-domain networks when connected to a domain authenticated network must be blocked.
+WN11-CC-000063,II,FAILED,Windows 11 systems must use either Group Policy or an approved Mobile Device Management (MDM) product to enforce STIG compliance.
+WN11-CC-000066,II,PASSED,Command line data must be included in process creation events.
+WN11-CC-000068,II,PASSED,Windows 11 must be configured to enable Remote host allows delegation of non-exportable credentials.
+WN11-CC-000070,II,PASSED,Virtualization-Based Security (VBS) must be enabled on Windows 11 with the platform security level configured to Secure Boot or Secure Boot with DMA Protection.
+WN11-CC-000075,I,FAILED,Credential Guard must be running on Windows 11 systems.
+WN11-CC-000080,II,PASSED,Virtualization-based protection of code integrity must be enabled.
+WN11-CC-000085,II,PASSED,"Early Launch Antimalware, Boot-Start Driver Initialization Policy must prevent boot drivers."
+WN11-CC-000090,II,PASSED,Group Policy objects must be reprocessed even if they have not changed.
+WN11-CC-000100,II,PASSED,Downloading print driver packages over HTTP must be prevented.
+WN11-CC-000105,II,PASSED,Web publishing and online ordering wizards must be prevented from downloading a list of providers.
+WN11-CC-000110,II,PASSED,Printing over HTTP must be prevented.
+WN11-CC-000115,II,PASSED,Systems must at least attempt device authentication using certificates.
+WN11-CC-000120,II,PASSED,The network selection user interface (UI) must not be displayed on the logon screen.
+WN11-CC-000130,II,PASSED,Local users on domain-joined computers must not be enumerated.
+WN11-CC-000145,II,PASSED,Users must be prompted for a password on resume from sleep (on battery).
+WN11-CC-000150,II,PASSED,The user must be prompted for a password on resume from sleep (plugged in).
+WN11-CC-000155,I,PASSED,Solicited Remote Assistance must not be allowed.
+WN11-CC-000165,II,PASSED,Unauthenticated RPC clients must be restricted from connecting to the RPC server.
+WN11-CC-000170,III,PASSED,The setting to allow Microsoft accounts to be optional for modern style apps must be enabled.
+WN11-CC-000175,III,PASSED,The Application Compatibility Program Inventory must be prevented from collecting data and sending the information to Microsoft.
+WN11-CC-000180,I,PASSED,Autoplay must be turned off for non-volume devices.
+WN11-CC-000185,I,PASSED,The default autorun behavior must be configured to prevent autorun commands.
+WN11-CC-000190,I,PASSED,Autoplay must be disabled for all drives.
+WN11-CC-000195,II,PASSED,Enhanced anti-spoofing for facial recognition must be enabled on Windows 11.
+WN11-CC-000200,II,PASSED,Administrator accounts must not be enumerated during elevation.
+WN11-CC-000204,II,PASSED,Enhanced diagnostic data must be limited to the minimum required to support Windows Analytics.
+WN11-CC-000205,II,PASSED,Windows Telemetry must not be configured to Full.
+WN11-CC-000206,III,PASSED,Windows Update must not obtain updates from other PCs on the internet.
+WN11-CC-000210,II,PASSED,The Microsoft Defender SmartScreen for Explorer must be enabled.
+WN11-CC-000215,II,PASSED,Explorer Data Execution Prevention must be enabled.
+WN11-CC-000220,III,PASSED,File Explorer heap termination on corruption must be disabled.
+WN11-CC-000225,II,PASSED,File Explorer shell protocol must run in protected mode.
+WN11-CC-000252,II,PASSED,Windows 11 must be configured to disable Windows Game Recording and Broadcasting.
+WN11-CC-000255,II,PASSED,The use of a hardware security device with Windows Hello for Business must be enabled.
+WN11-CC-000260,II,PASSED,Windows 11 must be configured to require a minimum PIN length of six characters or greater.
+WN11-CC-000270,II,PASSED,Passwords must not be saved in the Remote Desktop Client.
+WN11-CC-000275,II,PASSED,Local drives must be prevented from sharing with Remote Desktop Session Hosts.
+WN11-CC-000280,II,PASSED,Remote Desktop Services must always prompt a client for passwords upon connection.
+WN11-CC-000285,II,PASSED,The Remote Desktop Session Host must require secure RPC communications.
+WN11-CC-000290,II,PASSED,Remote Desktop Services must be configured with the client connection encryption set to the required level.
+WN11-CC-000295,II,PASSED,Attachments must be prevented from being downloaded from RSS feeds.
+WN11-CC-000300,II,PASSED,Basic authentication for RSS feeds over HTTP must not be used.
+WN11-CC-000305,II,PASSED,Indexing of encrypted files must be turned off.
+WN11-CC-000310,II,PASSED,Users must be prevented from changing installation options.
+WN11-CC-000315,I,PASSED,The Windows Installer feature 'Always install with elevated privileges' must be disabled.
+WN11-CC-000320,II,PASSED,Users must be notified if a web-based program attempts to install software.
+WN11-CC-000325,II,PASSED,Automatically signing in the last interactive user after a system-initiated restart must be disabled.
+WN11-CC-000326,II,PASSED,PowerShell script block logging must be enabled on Windows 11.
+WN11-CC-000327,II,PASSED,PowerShell Transcription must be enabled on Windows 11.
+WN11-CC-000330,I,PASSED,The Windows Remote Management (WinRM) client must not use Basic authentication.
+WN11-CC-000335,II,PASSED,The Windows Remote Management (WinRM) client must not allow unencrypted traffic.
+WN11-CC-000345,I,PASSED,The Windows Remote Management (WinRM) service must not use Basic authentication.
+WN11-CC-000350,II,PASSED,The Windows Remote Management (WinRM) service must not allow unencrypted traffic.
+WN11-CC-000355,II,PASSED,The Windows Remote Management (WinRM) service must not store RunAs credentials.
+WN11-CC-000360,II,PASSED,The Windows Remote Management (WinRM) client must not use Digest authentication.
+WN11-CC-000365,II,PASSED,Windows 11 must be configured to prevent Windows apps from being activated by voice while the system is locked.
+WN11-CC-000366,II,PASSED,Windows 11 must be configured to prevent Windows apps from being activated by voice.
+WN11-CC-000370,II,PASSED,The convenience PIN for Windows 11 must be disabled.
+WN11-CC-000385,II,PASSED,Windows Ink Workspace must be configured to disallow access above the lock.
+WN11-CC-000390,III,PASSED,Windows 11 must be configured to prevent users from receiving suggestions for third-party or additional applications.
+WN11-CC-000391,II,PASSED,Internet Explorer must be disabled for Windows 11.
+WN11-EP-000310,II,PASSED,Windows 11 Kernel (Direct Memory Access) DMA Protection must be enabled.
+WN11-PK-000005,II,FAILED,The DoW Root CA certificates must be installed in the Trusted Root Store.
+WN11-PK-000010,II,FAILED,The External Root CA certificates must be installed in the Trusted Root Store on unclassified systems.
+WN11-PK-000015,II,FAILED,The DoW Interoperability Root CA cross-certificates must be installed in the Untrusted Certificates Store on unclassified systems.
+WN11-PK-000020,II,FAILED,The US DoW CCEB Interoperability Root CA cross-certificates must be installed in the Untrusted Certificates Store on unclassified systems.
+WN11-RG-000005,II,PASSED,Default permissions for the HKEY_LOCAL_MACHINE registry hive must be maintained.
+WN11-SO-000010,II,PASSED,The built-in guest account must be disabled.
+WN11-SO-000015,II,PASSED,Local accounts with blank passwords must be restricted to prevent access from the network.
+WN11-SO-000020,II,PASSED,The built-in administrator account must be renamed.
+WN11-SO-000025,II,PASSED,The built-in guest account must be renamed.
+WN11-SO-000030,II,PASSED,Audit policy using subcategories must be enabled.
+WN11-SO-000035,II,PASSED,Outgoing secure channel traffic must be encrypted or signed.
+WN11-SO-000040,II,PASSED,Outgoing secure channel traffic must be encrypted.
+WN11-SO-000045,II,PASSED,Outgoing secure channel traffic must be signed.
+WN11-SO-000050,III,PASSED,The computer account password must not be prevented from being reset.
+WN11-SO-000055,III,PASSED,The maximum age for machine account passwords must be configured to 30 days or less.
+WN11-SO-000060,II,PASSED,The system must be configured to require a strong session key.
+WN11-SO-000070,II,PASSED,"The machine inactivity limit must be set to 15 minutes, locking the system with the screensaver."
+WN11-SO-000075,II,PASSED,The required legal notice must be configured to display before console logon.
+WN11-SO-000085,III,PASSED,Caching of logon credentials must be limited.
+WN11-SO-000095,II,PASSED,The Smart Card removal option must be configured to Force Logoff or Lock Workstation.
+WN11-SO-000100,II,PASSED,The Windows SMB client must be configured to always perform SMB packet signing.
+WN11-SO-000110,II,PASSED,Unencrypted passwords must not be sent to third-party SMB Servers.
+WN11-SO-000120,II,PASSED,The Windows SMB server must be configured to always perform SMB packet signing.
+WN11-SO-000140,I,PASSED,Anonymous SID/Name translation must not be allowed.
+WN11-SO-000145,I,PASSED,Anonymous enumeration of SAM accounts must not be allowed.
+WN11-SO-000150,I,PASSED,Anonymous enumeration of shares must be restricted.
+WN11-SO-000160,II,PASSED,The system must be configured to prevent anonymous users from having the same rights as the Everyone group.
+WN11-SO-000165,I,PASSED,Anonymous access to Named Pipes and Shares must be restricted.
+WN11-SO-000167,II,PASSED,Remote calls to the Security Account Manager (SAM) must be restricted to Administrators.
+WN11-SO-000180,II,PASSED,NTLM must be prevented from falling back to a Null session.
+WN11-SO-000185,II,PASSED,PKU2U authentication using online identities must be prevented.
+WN11-SO-000190,II,PASSED,Kerberos encryption types must be configured to prevent the use of DES and RC4 encryption suites.
+WN11-SO-000195,I,PASSED,The system must be configured to prevent the storage of the LAN Manager hash of passwords.
+WN11-SO-000205,I,PASSED,"The LanMan authentication level must be set to send NTLMv2 response only, and to refuse LM and NTLM."
+WN11-SO-000210,II,PASSED,The system must be configured to the required LDAP client signing level.
+WN11-SO-000215,II,PASSED,The system must be configured to meet the minimum session security requirement for NTLM SSP based clients.
+WN11-SO-000220,II,PASSED,The system must be configured to meet the minimum session security requirement for NTLM SSP based servers.
+WN11-SO-000230,II,PASSED,"The system must be configured to use FIPS-compliant algorithms for encryption, hashing, and signing."
+WN11-SO-000240,III,PASSED,The default permissions of global system objects must be increased.
+WN11-SO-000245,II,FAILED,User Account Control approval mode for the built-in Administrator must be enabled.
+WN11-SO-000250,II,PASSED,User Account Control must prompt administrators for consent on the secure desktop.
+WN11-SO-000251,II,PASSED,Windows 11 must use multifactor authentication for local and network access to privileged and nonprivileged accounts.
+WN11-SO-000255,II,PASSED,User Account Control must automatically deny elevation requests for standard users.
+WN11-SO-000260,II,PASSED,User Account Control must be configured to detect application installations and prompt for elevation.
+WN11-SO-000265,II,PASSED,User Account Control must only elevate UIAccess applications that are installed in secure locations.
+WN11-SO-000270,II,PASSED,"User Account Control must run all administrators in Admin Approval Mode, enabling UAC."
+WN11-SO-000275,II,PASSED,User Account Control must virtualize file and registry write failures to per-user locations.
+WN11-SO-000280,II,FAILED,Passwords for enabled local Administrator accounts must be changed at least every 180 days.
+WN11-UC-000015,III,PASSED,Toast notifications to the lock screen must be turned off.
+WN11-UC-000020,II,PASSED,Zone information must be preserved when saving attachments.
+WN11-UR-000005,II,PASSED,The 'Access Credential Manager as a trusted caller' user right must not be assigned to any groups or accounts.
+WN11-UR-000010,II,PASSED,The 'Access this computer from the network' user right must only be assigned to the Administrators and Remote Desktop Users groups.
+WN11-UR-000015,I,PASSED,The 'Act as part of the operating system' user right must not be assigned to any groups or accounts.
+WN11-UR-000025,II,PASSED,The 'Allow log on locally' user right must only be assigned to the Administrators and Users groups.
+WN11-UR-000030,II,PASSED,The 'Back up files and directories' user right must only be assigned to the Administrators group.
+WN11-UR-000035,II,PASSED,The 'Change the system time' user right must only be assigned to Administrators and Local Service.
+WN11-UR-000040,II,PASSED,The 'Create a pagefile' user right must only be assigned to the Administrators group.
+WN11-UR-000045,I,PASSED,The 'Create a token object' user right must not be assigned to any groups or accounts.
+WN11-UR-000050,II,PASSED,"The 'Create global objects' user right must only be assigned to Administrators, Service, Local Service, and Network Service."
+WN11-UR-000055,II,PASSED,The 'Create permanent shared objects' user right must not be assigned to any groups or accounts.
+WN11-UR-000060,II,PASSED,The 'Create symbolic links' user right must only be assigned to the Administrators group.
+WN11-UR-000065,I,PASSED,The 'Debug programs' user right must only be assigned to the Administrators group.
+WN11-UR-000070,II,PASSED,The 'Deny access to this computer from the network' user right on workstations must be configured to prevent access from highly privileged domain accounts and local accounts on domain systems and unauthenticated access on all systems.
+WN11-UR-000075,II,PASSED,The 'Deny log on as a batch job' user right on domain-joined workstations must be configured to prevent access from highly privileged domain accounts.
+WN11-UR-000080,II,PASSED,The 'Deny log on as a service' user right on Windows 11 domain-joined workstations must be configured to prevent access from highly privileged domain accounts.
+WN11-UR-000085,II,PASSED,The 'Deny log on locally' user right on workstations must be configured to prevent access from highly privileged domain accounts on domain systems and unauthenticated access on all systems.
+WN11-UR-000090,II,PASSED,The 'Deny log on through Remote Desktop Services' user right on Windows 11 workstations must be configured to prevent access from highly privileged domain accounts and local accounts on domain systems and unauthenticated access on all systems.
+WN11-UR-000095,II,PASSED,The 'Enable computer and user accounts to be trusted for delegation' user right must not be assigned to any groups or accounts.
+WN11-UR-000100,II,PASSED,The 'Force shutdown from a remote system' user right must only be assigned to the Administrators group.
+WN11-UR-000110,II,PASSED,"The 'Impersonate a client after authentication' user right must only be assigned to Administrators, Service, Local Service, and Network Service."
+WN11-UR-000120,II,PASSED,The 'Load and unload device drivers' user right must only be assigned to the Administrators group.
+WN11-UR-000125,II,PASSED,The 'Lock pages in memory' user right must not be assigned to any groups or accounts.
+WN11-UR-000130,II,PASSED,The 'Manage auditing and security log' user right must only be assigned to the Administrators group.
+WN11-UR-000140,II,PASSED,The 'Modify firmware environment values' user right must only be assigned to the Administrators group.
+WN11-UR-000145,II,PASSED,The 'Perform volume maintenance tasks' user right must only be assigned to the Administrators group.
+WN11-UR-000150,II,PASSED,The 'Profile single process' user right must only be assigned to the Administrators group.
+WN11-UR-000160,II,PASSED,The 'Restore files and directories' user right must only be assigned to the Administrators group.
+WN11-UR-000165,II,PASSED,The 'Take ownership of files or other objects' user right must only be assigned to the Administrators group.

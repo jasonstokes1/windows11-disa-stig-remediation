@@ -1,0 +1,3 @@
+# Rollback WN11 CC step c - removes the 4 values, keys left in place - drafted with Claude
+$r="HKLM:\SOFTWARE\Policies\Microsoft\Windows\LanmanWorkstation|AllowInsecureGuestAuth","HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths|\\*\NETLOGON","HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths|\\*\SYSVOL","HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Rpc|RestrictRemoteClients"
+foreach($i in $r){$p,$n=$i -split "\|"; Remove-ItemProperty -Path $p -Name $n -ErrorAction SilentlyContinue; $v=$null; $k=Get-Item -Path $p -ErrorAction SilentlyContinue; if($k){$v=$k.GetValue($n)}; if($null -eq $v){"$n = NOT SET"}else{"$n = $v"}}

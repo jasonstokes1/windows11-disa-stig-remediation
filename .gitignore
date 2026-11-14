@@ -1,0 +1,7 @@
+.DS_Store
+*.zip
+not-used/
+
+# Private raw exports: never publish (contain account names, SIDs, subscription ID)
+reports/*.csv
+reports/*stig-audit*.pdf

@@ -1,0 +1,2 @@
+# WN11-CC-000206 standalone check location (Settings app key) - drafted with Claude
+$p="HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config"; if(-not (Test-Path $p)){New-Item -Path $p -Force | Out-Null}; New-ItemProperty -Path $p -Name DODownloadMode -Value 0 -PropertyType DWord -Force | Out-Null; "DODownloadMode = " + (Get-ItemProperty -Path $p -Name DODownloadMode).DODownloadMode

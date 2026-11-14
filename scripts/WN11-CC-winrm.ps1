@@ -1,0 +1,3 @@
+# WN11 CC WinRM (5 rules) - drafted with Claude
+$r="HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client|AllowBasic|0","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client|AllowUnencryptedTraffic|0","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|AllowBasic|0","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|AllowUnencryptedTraffic|0","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|DisableRunAs|1"
+foreach($i in $r){$p,$n,$d=$i -split "\|"; if(-not (Test-Path $p)){New-Item -Path $p -Force | Out-Null}; New-ItemProperty -Path $p -Name $n -Value ([int]$d) -PropertyType DWord -Force | Out-Null; "$p\$n = " + (Get-ItemProperty -Path $p -Name $n).$n}

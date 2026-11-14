@@ -1,0 +1,3 @@
+# Rollback WN11 CC WinRM - removes the 5 values, keys left in place - drafted with Claude
+$r="HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client|AllowBasic","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client|AllowUnencryptedTraffic","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|AllowBasic","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|AllowUnencryptedTraffic","HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service|DisableRunAs"
+foreach($i in $r){$p,$n=$i -split "\|"; Remove-ItemProperty -Path $p -Name $n -ErrorAction SilentlyContinue; $v=(Get-ItemProperty -Path $p -Name $n -ErrorAction SilentlyContinue).$n; if($null -eq $v){"$p\$n = NOT SET"}else{"$p\$n = $v"}}

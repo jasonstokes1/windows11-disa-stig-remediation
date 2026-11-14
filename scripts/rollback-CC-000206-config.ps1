@@ -1,0 +1,2 @@
+# Rollback WN11-CC-000206 Config value, key left in place - drafted with Claude
+$p="HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config"; Remove-ItemProperty -Path $p -Name DODownloadMode -ErrorAction SilentlyContinue; $v=(Get-ItemProperty -Path $p -Name DODownloadMode -ErrorAction SilentlyContinue).DODownloadMode; if($null -eq $v){"DODownloadMode = NOT SET"}else{"DODownloadMode = $v"}
