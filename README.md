@@ -129,9 +129,9 @@ The required legal notice shown at logon (step 5):
 
 ### A fix that was correct but still failed (WN11-CC-000206)
 
-I set the Delivery Optimization policy value the rule names. The next audit still failed and reported the value as missing. Read-only checks showed the policy value was present, so I read the audit's exact check. The STIG lists a **second location** for computers that are not managed by a domain, and that is the one Tenable read on this machine. Setting the value there passed the rule on the next scan.
+I set the Delivery Optimization policy value the rule names, as one of 16 rules in step 8. I predicted 47 failures for the next audit. It showed **48**: this rule still failed and reported the value as missing. Read-only checks showed the policy value was present, so I read the audit's exact check. The STIG lists a **second location** for computers that are not managed by a domain, and that is the one Tenable read on this machine. Setting the value there passed the rule on the next scan.
 
-<img src="screenshots/45-cc-000206-config-run.png" alt="Setting the Delivery Optimization value in the second location" width="700">
+<img src="screenshots/44-stig-scan9-audits.png" alt="Scan 9 audit results: 48 failed, 11 warning, 199 passed" width="900">
 
 ### A security feature that was enabled but not running (WN11-CC-000070, WN11-CC-000080)
 
@@ -186,7 +186,7 @@ The full final result, one row per rule, is in [results/stig-results-final-scan1
 
 <img src="screenshots/91-stig-scan16-final-audits.png" alt="After: final audit" width="900">
 
-**Vulnerabilities, with honest attribution.** The same scans also report software vulnerabilities. They fell from 3 Critical, 13 High, 13 Medium and 2 Low to 0 Critical, 1 High, 4 Medium and 1 Low. That drop came from **Windows Update installing patches during the project, not from my scripts**. STIG settings and missing patches are separate problems. Reports: [baseline](reports/scan01-baseline-vulns.pdf), [final](reports/scan15-final-vulns.pdf).
+**Vulnerabilities, with honest attribution.** The same scans also report software vulnerabilities. They fell from 3 Critical, 13 High, 13 Medium and 2 Low to 0 Critical, 1 High, 4 Medium and 1 Low. That drop came from **Windows Update installing patches during the project, not from my scripts**. STIG settings and missing patches are separate problems. The six findings that remain are outside this project's scope; they are the same ones I remediated or risk-accepted in my [RDP hardening project](https://github.com/jasonstokes1/rdp-vulnerability-remediation). Reports: [baseline](reports/scan01-baseline-vulns.pdf), [final](reports/scan15-final-vulns.pdf).
 
 ## 7. What Is Still Open
 
